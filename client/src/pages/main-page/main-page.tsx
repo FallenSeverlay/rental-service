@@ -1,19 +1,23 @@
-import { CitiesCard } from "../../components/cities-card/cities-card";
+import { CitiesCardList } from "../../components/cities-card-list/cities-card-list";
+import { Logo } from "../../components/logo/logo";
+import Map from "../../components/map/map";
+import { OfferList } from "../../types/offer";
 
 type MainPageProps = {
     rentalOffersCount: number;
+    offersList: OfferList[];
 }
 
-function MainPage({rentalOffersCount} : MainPageProps) {
+function MainPage({rentalOffersCount, offersList} : MainPageProps) {
+    const amsterdamOffers = offersList.filter((o) => o.city.name === 'Amsterdam');
+
     return(
         <div className="page page--gray page--main">
             <header className="header">
                 <div className="container">
                 <div className="header__wrapper">
                     <div className="header__left">
-                    <a className="header__logo-link header__logo-link--active">
-                        <img className="header__logo" src="img/logo.svg" alt="Rent service logo" width="81" height="41"/>
-                    </a>
+                        <Logo/>
                     </div>
                     <nav className="header__nav">
                     <ul className="header__nav-list">
@@ -95,11 +99,16 @@ function MainPage({rentalOffersCount} : MainPageProps) {
                         </ul>
                     </form>
                     <div className="cities__places-list places__list tabs__content">
-                        <CitiesCard/>
+                        <CitiesCardList offersList={offersList}/>
                     </div>
                     </section>
                     <div className="cities__right-section">
-                    <section className="cities__map map"></section>
+                        <Map
+                            city={amsterdamOffers[0]?.city || {
+                            location: { latitude: 52.3676, longitude: 4.9041, zoom: 13 },
+                            }}
+                            offers={amsterdamOffers}
+                        />
                     </div>
                 </div>
                 </div>
