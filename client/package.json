@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.8.1",
+    "@reduxjs/toolkit": "^2.8.2",
+    "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
     "leaflet": "^1.9.4",
     "react": "^19.1.0",

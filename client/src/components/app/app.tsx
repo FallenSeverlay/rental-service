@@ -37,7 +37,7 @@ function App({rentalOffersCount, offers}: AppMainPageProps): JSX.Element {
         <Routes>
         
         <Route path='*' element={<EmptyPage/>}/>
-        <Route path={AppRoute.Main} element={<MainPage rentalOffersCount={rentalOffersCount} offersList={offersList}/>}/>
+        <Route path={AppRoute.Main} element={<MainPage/>}/>
         <Route
             path={ AppRoute.Favorites }
             element={

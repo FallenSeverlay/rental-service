@@ -2,12 +2,19 @@ import { useRef, useEffect } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import useMap from '../../hooks/use-map/use-map';
-import { OfferList, CityOffer } from '../../types/offer';
+import { CityOffer, OfferList } from '../../types/offer';
 
 type MapProps = {
     city: CityOffer;
     offers: OfferList[];
+    selectedOffer?: OfferList;
 };
+
+const activeIcon = L.icon({
+  iconUrl: '/img/pin-active.svg', // путь к оранжевому маркеру
+  iconSize: [30, 40],
+  iconAnchor: [15, 40],
+});
 
 const defaultIcon = L.icon({
   iconUrl: '/img/pin.svg',
@@ -15,9 +22,18 @@ const defaultIcon = L.icon({
   iconAnchor: [15, 40],
 });
 
-function Map({ city, offers }: MapProps) {
+function Map({ city, offers, selectedOffer }: MapProps) {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const map = useMap(mapRef, city);
+
+  useEffect(() => {
+    if (map) {
+      map.setView(
+        [city.location.latitude, city.location.longitude],
+        city.location.zoom
+      );
+    }
+  }, [map, city]);
 
   useEffect(() => {
     if (map) {
@@ -28,14 +44,16 @@ function Map({ city, offers }: MapProps) {
       });
 
       offers.forEach((offer) => {
+        const icon = selectedOffer?.id === offer.id ? activeIcon : defaultIcon;
+
         L.marker([offer.location.latitude, offer.location.longitude], {
-          icon: defaultIcon,
+          icon,
         })
           .addTo(map)
           .bindPopup(offer.title);
       });
     }
-  }, [map, offers]);
+  }, [map, offers, selectedOffer]);
 
   return <div className="cities__map map" ref={mapRef} style={{ height: '100%' }} />;
 }
