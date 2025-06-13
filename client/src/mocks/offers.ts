@@ -176,5 +176,52 @@ export const offers: FullOffer[] = [
             "../img/6.png"
         ],
         "maxAdults": 3
+    },
+    {
+        "id": "cf16c7c0-3055-408b-afd4-b1e8313441f3",
+        "title": "Интересные аппартаменнты в Париже",
+        "description": "Удобная квартира",
+        "type": "apartment",
+        "price": 170,
+        "city": {
+            "name": "Paris",
+            "location": {
+                "latitude": 48.5112,
+                "longitude": 2.2055,
+                "zoom": 13
+            }
+        },
+        "location": {
+            "latitude": 48.5112,
+            "longitude": 2.2055,
+            "zoom": 16
+        },
+        "isFavorite": true,
+        "isPremium": false,
+        "rating": 4.1,
+        "bedrooms": 2,
+        "goods": [
+            "Breakfast",
+            "Air conditioning",
+            "Laptop friendly workspace",
+            "Baby seat",
+            "Washer",
+            "Towels",
+            "Fridge"
+        ],
+        "host": {
+            "name": "Angelina",
+            "avatarUrl": "../img/avatar-angelina.jpg",
+            "isPro": true
+        },
+        "images": [
+            "../img/1.png",
+            "../img/2.png",
+            "../img/3.png",
+            "../img/4.png",
+            "../img/5.png",
+            "../img/6.png"
+        ],
+        "maxAdults": 3
     }
 ]

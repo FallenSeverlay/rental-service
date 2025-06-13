@@ -21,6 +21,19 @@ function OfferPage({offers}: OfferProps) {
         return <EmptyPage/>;
     }
 
+    const mappedOffer: OfferList = {
+        id: offer.id,
+        title: offer.title,
+        type: offer.type,
+        price: offer.price,
+        city: offer.city,
+        location: offer.location,
+        isFavorite: offer.isFavorite,
+        isPremium: offer.isPremium,
+        rating: offer.rating,
+        previewImage: offer.images[0] ?? '',
+    };
+
     const sameCityOffers: OfferList[] = offers
         .filter((o) => o.city.name === offer.city.name && o.id !== offer.id)
         .map((o) => ({
@@ -157,6 +170,7 @@ function OfferPage({offers}: OfferProps) {
                 </div>
                 <section className="offer__map map">
                     <Map
+                        selectedOffer={mappedOffer}
                         city={offer.city}
                         offers={sameCityOffers}
                     />

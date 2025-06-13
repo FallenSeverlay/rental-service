@@ -92,5 +92,51 @@ export const offersList: OfferList[] = [
         "isPremium": false,
         "rating": 4.9,
         "previewImage": "img/apartment-small-04.jpg"
+    },
+    {
+        "id": "cf16c7c0-3055-408b-afd4-b1e8313441f3",
+        "title": "Интересные аппартаменнты в Париже",
+        "type": "apartment",
+        "price": 170,
+        "city": {
+            "name": "Paris",
+            "location": {
+                "latitude": 48.5112,
+                "longitude": 2.2055,
+                "zoom": 13
+            }
+        },
+        "location": {
+            "latitude": 48.5112,
+            "longitude": 2.2055,
+            "zoom": 16
+        },
+        "isFavorite": true,
+        "isPremium": false,
+        "rating": 4.1,
+        "previewImage": "img/apartment-small-04.jpg"
+    },
+    {
+        "id": "cf16c7c0-3055-408b-afd4-b118313441f3",
+        "title": "Интересные аппартаменнты в Брюсселе",
+        "type": "apartment",
+        "price": 170,
+        "city": {
+            "name": "Cologne",
+            "location": {
+                "latitude": 48.5112,
+                "longitude": 2.2055,
+                "zoom": 13
+            }
+        },
+        "location": {
+            "latitude": 48.5112,
+            "longitude": 2.2055,
+            "zoom": 16
+        },
+        "isFavorite": true,
+        "isPremium": false,
+        "rating": 4.1,
+        "previewImage": "img/apartment-small-04.jpg"
     }
 ]

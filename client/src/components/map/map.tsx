@@ -11,7 +11,7 @@ type MapProps = {
 };
 
 const activeIcon = L.icon({
-  iconUrl: '/img/pin-active.svg', // путь к оранжевому маркеру
+  iconUrl: '/img/pin-active.svg',
   iconSize: [30, 40],
   iconAnchor: [15, 40],
 });

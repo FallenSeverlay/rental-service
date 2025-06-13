@@ -38,7 +38,7 @@ function CitiesCard({id, title, type, price, previewImage, isPremium, rating, on
                 </div>
                 <div className="place-card__rating rating">
                 <div className="place-card__stars rating__stars">
-                    <span style={{width: "80%"}}></span>
+                    <span style={{width: `${(rating / 5) * 100}%` }}></span>
                     <span className="visually-hidden">{rating}</span>
                 </div>
                 </div>
